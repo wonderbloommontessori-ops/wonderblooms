@@ -14,7 +14,13 @@
         body {
             background-color: #d1e0eb; /* Soft blue background */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px 20px;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .wrapper {
@@ -22,16 +28,20 @@
             padding: 15px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 650px; /* Controls maximum width on desktop */
             width: 100%;
-            margin: 0 auto; /* Centers the flyer horizontally */
             text-align: center;
+        }
+
+        /* This wrapper ensures portrait images load flawlessly without squishing */
+        .img-container {
+            width: 100%;
+            display: block;
         }
 
         .flyer-img {
             width: 100%;
-            height: auto !important; /* Forces the correct, un-squished aspect ratio */
             display: block;
+            height: auto !important; /* Forces natural proportions */
             border-radius: 12px;
         }
 
@@ -48,11 +58,16 @@
 </head>
 <body>
 
-    <div class="wrapper">
-        <img src="flyer.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
-        <footer>
-            Growing, Learning, & Thriving Together
-        </footer>
+    <div class="container">
+        <div class="wrapper">
+            <div class="img-container">
+                <!-- IMPORTANT: Change wonderbloommontessori_v2.png below to your exact file name if different -->
+                <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
+            </div>
+            <footer>
+                Growing, Learning, & Thriving Together
+            </footer>
+        </div>
     </div>
 
 </body>
