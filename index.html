@@ -3,58 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonderbloom Montessori Home | Now Accepting Enrollments</title>
+    <title>Wonderbloom Montessori Home | South Lyon, MI</title>
     <style>
+        :root {
+            --primary-blue: #2d5a7b;
+            --accent-gold: #f5eedc;
+            --cream-bg: #fdfaf4;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #fcfaf2; /* Matches the warm cream background of the flyer */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            width: 100%;
-            min-height: 100vh;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        .full-page-container {
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* Hero Header Section */
+        .hero {
+            background: linear-gradient(135deg, #eef5f9 0%, #fdfaf4 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px dashed #d5c8b0;
         }
 
-        .flyer-img {
+        .hero h1 {
+            color: var(--primary-blue);
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(217, 83, 79, 0.2);
+        }
+
+        /* Main Content Container */
+        .container {
             width: 100%;
-            max-width: 1000px; /* Expands the flyer to fill the screen on desktop */
-            height: auto !important; /* Locks the correct aspect ratio completely */
-            display: block;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Feature Section (Pillars) */
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            border: 1px solid #ebdcb9;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(45, 90, 123, 0.08);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Full Width Schedule Ribbon */
+        .schedule-ribbon {
+            background-color: var(--accent-gold);
+            padding: 60px 20px;
+            width: 100%;
+        }
+
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .schedule-col h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .schedule-list {
+            list-style: none;
+        }
+
+        .schedule-list > li {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .sub-list {
+            list-style: none;
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .sub-list li {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: normal;
+            padding: 4px 0;
+        }
+
+        .sub-list li::before {
+            content: "• ";
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin: 60px auto 20px auto;
+            box-shadow: 0 20px 40px rgba(45,90,123,0.05);
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: left;
+            background: #fafbfc;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .contact-item h4 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 500;
         }
 
         footer {
-            padding: 25px 0;
-            font-size: 0.9rem;
-            color: #556877;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
             text-align: center;
-            width: 100%;
-            background-color: #fcfaf2;
+            padding: 40px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        /* Responsive UI Changes */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.2rem; }
+            .schedule-split { grid-template-columns: 1fr; gap: 30px; }
+            .contact-section { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="full-page-container">
-        <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
-        <footer>
-            Growing, Learning, & Thriving Together
-        </footer>
-    </div>
+    <section class="hero">
+        <h1>Welcoming Little Minds</h1>
+        <p>To A Nurturing Montessori Home</p>
+        <div class="badge">Now Accepting Enrollments!</div>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Our Core Focus Areas</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Fostering Independence</h3>
+                <p>Nurturing self-reliance, confidence, and a lifelong love of learning through child-led choices and beautifully prepared spaces.</p>
+            </div>
+            <div class="card">
+                <h3>Experienced Educator</h3>
+                <p>Guided environmental observations and individualized support tailored explicitly to match vital early childhood milestones.</p>
+            </div>
+            <div class="card">
+                <h3>Individualized Plans</h3>
+                <p>Activities structured intentionally to match your child's distinct developmental pace and personal learning curiosity.</p>
+            </div>
+            <div class="card">
+                <h3>Small Class Sizes</h3>
+                <p>An intimate community setting ensuring specialized focus, intentional supervision, and high-quality family care.</p>
+            </div>
+            <div class="card">
+                <h3>Nutritious Meals</h3>
+                <p>Wholesome, healthy snacks and balanced, fresh home-cooked meals prepared daily from scratch with absolute care.</p>
+            </div>
+            <div class="card">
+                <h3>Outdoor Play Area</h3>
+                <p>Dedicated dynamic outdoor play zones built intentionally for gross motor exploration and active discoveries in nature.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="schedule-ribbon">
+        <div class="schedule-container">
+            <h2 class="section-title" style="margin-bottom: 10px;">A Day At Our Montessori Home</h2>
+            <div class="schedule-split">
+                
+                <div class="schedule-col">
+                    <h3>Morning Activity Blocks</h3>
+                    <ul class="schedule-list">
+                        <li>• Circle Time <span style="font-weight: normal; color: var(--text-light); font-size: 1rem;">(songs, stories)</span></li>
+                        <li>• Morning Work Cycle</li>
+                        <li>• Outdoor Exploration</li>
+                        <li>• One-to-one lessons</li>
+                        <li>• Art & Music</li>
+                    </ul>
+                </div>
+
+                <div class="schedule-col">
+                    <h3>Afternoon Enrichment</h3>
+                    <ul class="schedule-list">
+                        <li>• Community Lunch</li>
+                        <li>• Afternoon Enrichment Focus:
+                            <ul class="sub-list">
+                                <li>Sensorial development</li>
+                                <li>Hand-eye coordination</li>
+                                <li>Behavioral development</li>
+                                <li>Scientific exploration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="contact-section">
+            <h2 class="section-title" style="margin-bottom: 10px;">Learn More & Schedule a Tour!</h2>
+            <p>Connect with us directly to discuss space availability and book an environment walkthrough.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Contact Name</h4>
+                    <p>Geetha Rani Nadukuru</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone Number</h4>
+                    <p>+1 248 832 6701</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email Address</h4>
+                    <p>wonderbloommontessori@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>South Lyon, MI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Growing, Learning, & Thriving Together
+    </footer>
 
 </body>
 </html>
