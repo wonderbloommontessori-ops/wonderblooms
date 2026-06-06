@@ -3,350 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonderbloom Montessori Home | South Lyon, MI</title>
+    <title>Welcoming Little Minds | Nurturing Montessori Home</title>
     <style>
         :root {
-            --primary: #2d5a7b;
-            --secondary: #eef5f9;
-            --accent: #fdf6e2;
-            --text: #333333;
-            --text-light: #666666;
-            --border-radius: 12px;
+            --primary-blue: #2d5a7b;
+            --accent-cream: #fbf7ef;
+            --card-tan: #f5eedc;
+            --text-dark: #2c3e50;
+            --text-muted: #576574;
+            --border-style: 2px dashed #d5c8b0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            color: var(--text);
+            background-color: #fcfaf2;
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: #faf8f5;
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 20px;
         }
 
-        /* Header Section */
+        /* Top Header Styling */
         header {
             text-align: center;
-            padding: 40px 0 20px 0;
-            background-color: var(--accent);
-            border-bottom: 2px dashed #dcd5c5;
+            background-color: var(--accent-cream);
+            border: var(--border-style);
+            border-radius: 16px;
+            padding: 40px 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
         header h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            color: var(--primary-blue);
+            font-size: 2.4rem;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
-        header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
+        header h2 {
+            font-size: 1.4rem;
+            color: var(--text-muted);
             font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        .enroll-badge {
+        .badge {
             display: inline-block;
             background-color: #d9534f;
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            margin-top: 15px;
             font-weight: bold;
+            padding: 10px 24px;
+            border-radius: 25px;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(217,83,79,0.2);
         }
 
-        /* Hero Image Placement Section */
-        .hero-banner {
-            background-color: #fff;
-            padding: 30px 0;
+        /* Main Display Section */
+        .hero-section {
             text-align: center;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
         }
 
-        .image-placeholder {
-            width: 100%;
-            max-width: 800px;
+        .hero-placeholder {
+            background: #eef2f5;
+            border-radius: 16px;
             height: 450px;
-            margin: 0 auto;
-            background-color: #e5e5e5;
-            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
+            color: var(--text-muted);
             font-style: italic;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #ddd;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
         }
 
-        /* Core Features Grid */
-        .features-grid {
+        /* Pillars Pillars Grid */
+        .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
-        .feature-card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            border: 1px solid #f0eadd;
+        .pillar-card {
+            background-color: var(--accent-cream);
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
-            transition: transform 0.2s;
+            border: 1px solid #ebdcb9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: transform 0.2s ease-index;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            background-color: #fff;
         }
 
-        .feature-card h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Daily Schedule Section */
-        .schedule-section {
-            background-color: var(--secondary);
-            padding: 50px 0;
-            border-radius: var(--border-radius);
-            margin: 40px 0;
-        }
-
-        .schedule-section h2 {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 35px;
-            font-size: 2rem;
+        .pillar-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
             text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
-        .schedule-wrapper {
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Routine Timeline Block */
+        .routine-container {
+            background-color: var(--card-tan);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .routine-container h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .routine-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
-        @media (max-width: 768px) {
-            .schedule-wrapper {
-                grid-template-columns: 1fr;
-            }
-            .image-placeholder {
-                height: 250px;
-            }
-        }
-
-        .schedule-column h3 {
-            border-bottom: 2px solid var(--primary);
+        .routine-column h3 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
             padding-bottom: 8px;
             margin-bottom: 15px;
-            color: var(--primary);
+            font-size: 1.2rem;
+            text-transform: uppercase;
         }
 
-        .schedule-list {
+        .routine-list {
             list-style: none;
         }
 
-        .schedule-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e8f0;
-            font-size: 1.05rem;
+        .routine-list > li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #333;
         }
 
-        .schedule-list li strong {
-            color: #444;
+        .sub-routine-list {
+            list-style: none;
+            margin-left: 20px;
+            margin-top: 6px;
         }
 
-        .nested-list {
-            list-style: circle;
-            margin-left: 25px;
-            margin-top: 5px;
-        }
-
-        .nested-list li {
-            padding: 4px 0;
-            border: none;
+        .sub-routine-list li {
             font-size: 0.95rem;
-            color: var(--text-light);
+            color: var(--text-muted);
+            font-weight: normal;
+            padding: 3px 0;
+            position: relative;
         }
 
-        /* Contact Section */
-        .contact-section {
-            background-color: #ffffff;
-            border: 2px solid var(--primary);
-            border-radius: var(--border-radius);
+        .sub-routine-list li::before {
+            content: "- ";
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Action/Contact Card */
+        .action-card {
+            background: #ffffff;
+            border: 2px solid var(--primary-blue);
+            border-radius: 16px;
             padding: 40px;
             text-align: center;
-            margin: 50px 0;
-            box-shadow: 0 10px 20px rgba(45,90,123,0.05);
+            box-shadow: 0 10px 30px rgba(45,90,123,0.06);
         }
 
-        .contact-section h2 {
-            color: var(--primary);
-            margin-bottom: 15px;
+        .action-card h2 {
+            color: var(--primary-blue);
             font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .contact-section p {
-            font-size: 1.1rem;
+        .action-card p {
+            color: var(--text-muted);
             margin-bottom: 25px;
-            color: var(--text-light);
+            font-size: 1.1rem;
         }
 
-        .contact-details {
+        .details-box {
             display: inline-block;
             text-align: left;
-            font-size: 1.15rem;
-            background: #fafafa;
-            padding: 25px 35px;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
+            background-color: var(--accent-cream);
+            padding: 25px 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-blue);
+            font-size: 1.1rem;
         }
 
-        .contact-details div {
-            margin-bottom: 12px;
+        .details-box div {
+            margin-bottom: 10px;
         }
 
-        .contact-details div:last-child {
+        .details-box div:last-child {
             margin-bottom: 0;
         }
 
-        /* Footer */
+        .details-box strong {
+            color: var(--primary-blue);
+            display: inline-block;
+            width: 140px;
+        }
+
+        /* Sticky Bottom Message */
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            border-top: 1px solid #eee;
-            margin-top: 60px;
-            font-weight: 500;
+            padding: 40px 0;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .routine-split {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .hero-placeholder {
+                height: 260px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .details-box {
+                padding: 20px;
+                width: 100%;
+            }
+            .details-box strong {
+                display: block;
+                margin-bottom: 2px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Banner -->
-    <header>
-        <div class="container">
-            <h1>Welcoming Little Minds</h1>
-            <p>To A Nurturing Montessori Home</p>
-            <div class="enroll-badge">Now Accepting Enrollments!</div>
-        </div>
-    </header>
-
-    <!-- Main Flyer Image Container -->
-    <section class="hero-banner">
-        <div class="container">
-            <!-- Once online, replace the text inside this div with your actual flyer image file -->
-            <div class="image-placeholder">
-                [ Your sharp, completed flyer image (watermarked_img_7126345148080276971.png) goes here ]
-            </div>
-        </div>
-    </section>
-
     <div class="container">
-        
-        <!-- Core Focus Areas Pillars -->
-        <section class="features-grid">
-            <div class="feature-card">
+
+        <!-- Announcement Area -->
+        <header>
+            <h1>Welcoming Little Minds</h1>
+            <h2>To A Nurturing Montessori Home</h2>
+            <div class="badge">Now Accepting Enrollments!</div>
+        </header>
+
+        <!-- Graphic Asset Block -->
+        <section class="hero-section">
+            <!-- Tip: Place your finalized flyer graphic inside this container once hosted -->
+            <div class="hero-placeholder">
+                [ Main Flyer Graphic Asset Display Container ]
+            </div>
+        </section>
+
+        <!-- Program Pillars List -->
+        <section class="pillars-grid">
+            <div class="pillar-card">
                 <h3>Fostering Independence</h3>
-                <p>An environment intentionally arranged to encourage self-directed activity, choice, and natural confidence building.</p>
+                <p>Nurturing self-reliance and confidence through child-led choice and prepared environments.</p>
             </div>
-            <div class="feature-card">
-                <h3>Montessori Certified Guide</h3>
-                <p>Thoughtful, tailored observation and structured lessons led by an experienced educator specialized in child development.</p>
+            <div class="pillar-card">
+                <h3>Experienced & Certified Educator</h3>
+                <p>Guided observations and individualized support tailored beautifully to early childhood milestones.</p>
             </div>
-            <div class="feature-card">
+            <div class="pillar-card">
+                <h3>Individualized Learning Plans</h3>
+                <p>Activities structured carefully to adapt to your child's distinct learning pace and developmental steps.</p>
+            </div>
+            <div class="pillar-card">
                 <h3>Small Class Sizes</h3>
-                <p>Intimate group numbers ensure individualized learning paths and unmatched personal attention for your child.</p>
+                <p>A small group setting to guarantee specialized focus, close observation, and optimal family care.</p>
             </div>
-            <div class="feature-card">
-                <h3>Nutritious Home Cooked Meals</h3>
-                <p>Wholesome, healthy, fresh home-cooked meals and nutritious snacks prepared fresh daily to properly fuel active minds.</p>
+            <div class="pillar-card">
+                <h3>Home Cooked Nutritious Meals</h3>
+                <p>Wholesome, healthy snacks and balanced hot meals prepared daily from scratch with premium care.</p>
             </div>
-            <div class="feature-card" style="grid-column: span 1;">
+            <div class="pillar-card">
                 <h3>Outdoor Play Area</h3>
-                <p>Safe outdoor open environments engineered for exploration, coordination development, and physical wellness.</p>
+                <p>Dedicated dynamic outdoor environments structured for motor skill exploration and interaction with nature.</p>
             </div>
         </section>
 
-        <!-- Dynamic Schedule Grid -->
-        <section class="schedule-section">
-            <div class="container" style="width: 85%;">
-                <h2>A Day At Our Montessori Home</h2>
-                <div class="schedule-wrapper">
-                    
-                    <div class="schedule-column">
-                        <h3>Morning & Mid-Day Rhythm</h3>
-                        <ul class="schedule-list">
-                            <li><strong>• Circle Time</strong> (songs, stories)</li>
-                            <li><strong>• Morning Work Cycle</strong> (self-directed individual development)</li>
-                            <li><strong>• Outdoor Exploration</strong></li>
-                            <li><strong>• One-to-one lessons</strong></li>
-                            <li><strong>• Art & Music</strong></li>
-                        </ul>
-                    </div>
-
-                    <div class="schedule-column">
-                        <h3>Afternoon Focus</h3>
-                        <ul class="schedule-list">
-                            <li><strong>• Community Lunch</strong></li>
-                            <li><strong>• Afternoon Enrichment Focus:</strong>
-                                <ul class="nested-list">
-                                    <li>Sensorial development</li>
-                                    <li>Hand-eye coordination</li>
-                                    <li>Behavioral development</li>
-                                    <li>Scientific exploration</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
+        <!-- Program Structure Schedule -->
+        <section class="routine-container">
+            <h2>A Day At Our Montessori Home</h2>
+            <div class="routine-split">
+                
+                <div class="routine-column">
+                    <h3>Morning Activity Blocks</h3>
+                    <ul class="routine-list">
+                        <li>• Circle Time (songs, stories)</li>
+                        <li>• Morning Work Cycle</li>
+                        <li>• Outdoor Exploration</li>
+                        <li>• One-to-one lessons</li>
+                        <li>• Art & Music</li>
+                    </ul>
                 </div>
+
+                <div class="routine-column">
+                    <h3>Afternoon Enrichment Programs</h3>
+                    <ul class="routine-list">
+                        <li>• Community Lunch</li>
+                        <li>• Afternoon Enrichment Focus:
+                            <ul class="sub-routine-list">
+                                <li>Sensorial development</li>
+                                <li>Hand-eye coordination</li>
+                                <li>Behavioral development</li>
+                                <li>Scientific exploration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
-        <!-- Simplified Contact Form Block -->
-        <section class="contact-section">
+        <!-- Engagement Action Card -->
+        <section class="action-card">
             <h2>Learn More & Schedule a Tour!</h2>
-            <p>Reach out today to discuss individual enrollment spaces and view our learning environment.</p>
-            <div class="contact-details">
-                <div><strong>Contact Name:</strong> Geetha Rani Nadukuru</div>
+            <p>Connect with us directly to discuss space availability and schedule an environment walkthrough.</p>
+            
+            <div class="details-box">
+                <div><strong>Contact Name:</strong> Geethe Rani Nadukuru</div>
                 <div><strong>Phone:</strong> +1 248 832 6701</div>
                 <div><strong>Email:</strong> wonderbloommontessori@gmail.com</div>
                 <div><strong>Location:</strong> South Lyon, MI</div>
             </div>
         </section>
 
-    </div>
+        <!-- Bottom Page Motto -->
+        <footer>
+            Growing, Learning, & Thriving Together
+        </footer>
 
-    <!-- Decorative Bottom Footer Bar -->
-    <footer>
-        <div class="container">
-            GROWING, LEARNING, & THRIVING TOGETHER
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>
