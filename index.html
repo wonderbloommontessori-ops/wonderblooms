@@ -12,62 +12,48 @@
         }
 
         body {
-            background-color: #d1e0eb; /* Soft blue background */
+            background-color: #fcfaf2; /* Matches the warm cream background of the flyer */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 30px 15px;
+            width: 100%;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 650px;
+        .full-page-container {
             width: 100%;
-            margin: 0 auto;
-        }
-
-        .wrapper {
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            text-align: center;
-        }
-
-        /* This wrapper ensures portrait images load flawlessly without squishing */
-        .img-container {
-            width: 100%;
-            display: block;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .flyer-img {
             width: 100%;
+            max-width: 1000px; /* Expands the flyer to fill the screen on desktop */
+            height: auto !important; /* Locks the correct aspect ratio completely */
             display: block;
-            height: auto !important; /* Forces natural proportions */
-            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         footer {
-            margin-top: 20px;
-            margin-bottom: 5px;
-            font-size: 0.85rem;
+            padding: 25px 0;
+            font-size: 0.9rem;
             color: #556877;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-align: center;
+            width: 100%;
+            background-color: #fcfaf2;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="wrapper">
-            <div class="img-container">
-                <!-- IMPORTANT: Change wonderbloommontessori_v2.png below to your exact file name if different -->
-                <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
-            </div>
-            <footer>
-                Growing, Learning, & Thriving Together
-            </footer>
-        </div>
+    <div class="full-page-container">
+        <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
+        <footer>
+            Growing, Learning, & Thriving Together
+        </footer>
     </div>
 
 </body>
