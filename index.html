@@ -3,377 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcoming Little Minds | Nurturing Montessori Home</title>
+    <title>Wonderbloom Montessori Home | Now Accepting Enrollments</title>
     <style>
-        :root {
-            --primary-blue: #2d5a7b;
-            --accent-cream: #fbf7ef;
-            --card-tan: #f5eedc;
-            --text-dark: #2c3e50;
-            --text-muted: #576574;
-            --border-style: 2px dashed #d5c8b0;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: #fcfaf2;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
+            background-color: #d1e0eb; /* Warm, soft blue background that complements the flyer borders */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        /* Top Header Styling */
-        header {
+        .wrapper {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 650px; /* Prevents the vertical flyer from stretching too wide on desktop */
+            width: 100%;
             text-align: center;
-            background-color: var(--accent-cream);
-            border: var(--border-style);
-            border-radius: 16px;
-            padding: 40px 20px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
-        header h1 {
-            color: var(--primary-blue);
-            font-size: 2.4rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        header h2 {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #d9534f;
-            color: white;
-            font-weight: bold;
-            padding: 10px 24px;
-            border-radius: 25px;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 6px rgba(217,83,79,0.2);
-        }
-
-        /* Main Display Section */
-        .hero-section {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .hero-placeholder {
-            background: #eef2f5;
-            border-radius: 16px;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-style: italic;
-            border: 1px solid #ddd;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-        }
-
-        /* Pillars Pillars Grid */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .pillar-card {
-            background-color: var(--accent-cream);
+        .flyer-img {
+            width: 100%;
+            height: auto; /* Ensures aspect ratio is completely locked, stopping distortion */
+            display: block;
             border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid #ebdcb9;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
-            transition: transform 0.2s ease-index;
         }
 
-        .pillar-card:hover {
-            transform: translateY(-3px);
-            background-color: #fff;
-        }
-
-        .pillar-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-
-        .pillar-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* Routine Timeline Block */
-        .routine-container {
-            background-color: var(--card-tan);
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-
-        .routine-container h2 {
-            text-align: center;
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .routine-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .routine-column h3 {
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--primary-blue);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        .routine-list {
-            list-style: none;
-        }
-
-        .routine-list > li {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .sub-routine-list {
-            list-style: none;
-            margin-left: 20px;
-            margin-top: 6px;
-        }
-
-        .sub-routine-list li {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: normal;
-            padding: 3px 0;
-            position: relative;
-        }
-
-        .sub-routine-list li::before {
-            content: "- ";
-            color: var(--primary-blue);
-            font-weight: bold;
-        }
-
-        /* Action/Contact Card */
-        .action-card {
-            background: #ffffff;
-            border: 2px solid var(--primary-blue);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(45,90,123,0.06);
-        }
-
-        .action-card h2 {
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .action-card p {
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-
-        .details-box {
-            display: inline-block;
-            text-align: left;
-            background-color: var(--accent-cream);
-            padding: 25px 40px;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-blue);
-            font-size: 1.1rem;
-        }
-
-        .details-box div {
-            margin-bottom: 10px;
-        }
-
-        .details-box div:last-child {
-            margin-bottom: 0;
-        }
-
-        .details-box strong {
-            color: var(--primary-blue);
-            display: inline-block;
-            width: 140px;
-        }
-
-        /* Sticky Bottom Message */
         footer {
-            text-align: center;
-            padding: 40px 0;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            color: var(--primary-blue);
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #556877;
+            font-weight: 600;
             text-transform: uppercase;
-            font-size: 1rem;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .routine-split {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            .hero-placeholder {
-                height: 260px;
-            }
-            header h1 {
-                font-size: 1.8rem;
-            }
-            .details-box {
-                padding: 20px;
-                width: 100%;
-            }
-            .details-box strong {
-                display: block;
-                margin-bottom: 2px;
-            }
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-
-        <!-- Announcement Area -->
-        <header>
-            <h1>Welcoming Little Minds</h1>
-            <h2>To A Nurturing Montessori Home</h2>
-            <div class="badge">Now Accepting Enrollments!</div>
-        </header>
-
-        <!-- Graphic Asset Block -->
-        <section class="hero-section">
-            <!-- Tip: Place your finalized flyer graphic inside this container once hosted -->
-            <div class="hero-placeholder">
-                <!-- Graphic Asset Block -->
-           <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Flyer" style="width: 100%; max-width: 600px; height: auto; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #ebdcb9;">
- 
-            </div>
-        </section>
-
-        <!-- Program Pillars List -->
-        <section class="pillars-grid">
-            <div class="pillar-card">
-                <h3>Fostering Independence</h3>
-                <p>Nurturing self-reliance and confidence through child-led choice and prepared environments.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Experienced & Certified Educator</h3>
-                <p>Guided observations and individualized support tailored beautifully to early childhood milestones.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Individualized Learning Plans</h3>
-                <p>Activities structured carefully to adapt to your child's distinct learning pace and developmental steps.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Small Class Sizes</h3>
-                <p>A small group setting to guarantee specialized focus, close observation, and optimal family care.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Home Cooked Nutritious Meals</h3>
-                <p>Wholesome, healthy snacks and balanced hot meals prepared daily from scratch with premium care.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Outdoor Play Area</h3>
-                <p>Dedicated dynamic outdoor environments structured for motor skill exploration and interaction with nature.</p>
-            </div>
-        </section>
-
-        <!-- Program Structure Schedule -->
-        <section class="routine-container">
-            <h2>A Day At Our Montessori Home</h2>
-            <div class="routine-split">
-                
-                <div class="routine-column">
-                    <h3>Morning Activity Blocks</h3>
-                    <ul class="routine-list">
-                        <li>• Circle Time (songs, stories)</li>
-                        <li>• Morning Work Cycle</li>
-                        <li>• Outdoor Exploration</li>
-                        <li>• One-to-one lessons</li>
-                        <li>• Art & Music</li>
-                    </ul>
-                </div>
-
-                <div class="routine-column">
-                    <h3>Afternoon Enrichment Programs</h3>
-                    <ul class="routine-list">
-                        <li>• Community Lunch</li>
-                        <li>• Afternoon Enrichment Focus:
-                            <ul class="sub-routine-list">
-                                <li>Sensorial development</li>
-                                <li>Hand-eye coordination</li>
-                                <li>Behavioral development</li>
-                                <li>Scientific exploration</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Engagement Action Card -->
-        <section class="action-card">
-            <h2>Learn More & Schedule a Tour!</h2>
-            <p>Connect with us directly to discuss space availability and schedule an environment walkthrough.</p>
-            
-            <div class="details-box">
-                <div><strong>Contact Name:</strong> Geethe Rani Nadukuru</div>
-                <div><strong>Phone:</strong> +1 248 832 6701</div>
-                <div><strong>Email:</strong> wonderbloommontessori@gmail.com</div>
-                <div><strong>Location:</strong> South Lyon, MI</div>
-            </div>
-        </section>
-
-        <!-- Bottom Page Motto -->
+    <div class="wrapper">
+        <!-- Replaces the distorted layout with the exact image file from your repository -->
+        <img src="wonderbloommontessori_v2.png" alt="Wonderbloom Montessori Home Flyer" class="flyer-img">
         <footer>
             Growing, Learning, & Thriving Together
         </footer>
-
     </div>
 
 </body>
